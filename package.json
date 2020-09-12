@@ -1,0 +1,15 @@
+{
+  "name": "ray-rust-wasm",
+  "collaborators": [
+    "Masahiro <masahiro.sakuta@zmp.co.jp>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "ray_rust_wasm_bg.wasm",
+    "ray_rust_wasm.js",
+    "ray_rust_wasm.d.ts"
+  ],
+  "module": "ray_rust_wasm.js",
+  "types": "ray_rust_wasm.d.ts",
+  "sideEffects": false
+}

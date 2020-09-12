@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>"Hello world" in Rust + Webassembly</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: {
+          TagSide: "left"
+        }
+      });
+    </script>
+		<script type="text/javascript"
+		 src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.css" integrity="sha384-exe4Ak6B0EoJI0ogGxjJ8rn+RN3ftPnEQrGwX59KTCl5ybGzvHGKjhPKk/KC3abb" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha2/katex.min.js" integrity="sha384-OMvkZ24ANLwviZR2lVq8ujbE/bUO8IR1FdBrKLQBI14Gq5Xp/lksIccGkmKL8m+h" crossorigin="anonymous"></script> -->
+    <script type="module" src="./test.js">
+    </script>
+    <style type="text/css">
+      body{
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+      <canvas id="canvas" width="320" height="240"> </canvas>
+      <div>
+        <label><input type="checkbox" id="animate">Animate</label>
+      </div>
+      <div>Use your WASDQZ keys to move</div>
+      <div>Use your arrow keys to rotate</div>
+      <h2>Gray-scott model</h2>
+      <div>$$\frac{\partial u}{\partial t} = u^2 v - (F + k)u + r_u \Delta u$$</div>
+      <div>$$\frac{\partial v}{\partial t} = -u^2 v + F (1 - v) + r_v \Delta v$$</div>
+      <div>
+        Time step=<span id="deltaTimeLabel"></span>
+        <input id="deltaTime" type="range" max="1" min="1e-3" step="1e-3" value="1">
+      </div>
+      <div>
+        Skip frames=<span id="skipFramesLabel"></span>
+        <input id="skipFrames" type="range" max="10" min="1" step="1" value="1">
+      </div>
+      <div>
+        \(F=\)<span id="fLabel"></span>
+        <input id="f" type="range" max="1" min="1e-3" step="1e-3" value="0.03">
+      </div>
+      <div>
+        \(k=\)<span id="kLabel"></span>
+        <input id="k" type="range" max="1" min="1e-3" step="1e-3" value="0.056">
+      </div>
+      <div>
+        \(r_u=\)<span id="ruLabel"></span>
+        <input id="ru" type="range" max="1" min="1e-3" step="1e-3" value="0.09">
+      </div>
+      <div>
+        \(r_v=\)<span id="rvLabel"></span>
+        <input id="rv" type="range" max="1" min="1e-3" step="1e-3" value="0.056">
+      </div>
+      <h2>Presets</h2>
+      <button id="buttonStripes">Stripes</button>
+      <button id="buttonWaves">Waves</button>
+      <button id="buttonWavyStripes">Wavy Stripes</button>
+      <hr>
+      <div id="label"></div>
+  </body>
+</html>
