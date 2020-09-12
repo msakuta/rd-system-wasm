@@ -1,4 +1,4 @@
-import init, { turing } from './ray_rust_wasm.js'
+import init, { turing } from './rd_system_wasm.js'
 
 async function run() {
   await init()
@@ -19,14 +19,6 @@ async function run() {
   var rv = 0.056;
 
   const ctx = canvas.getContext('2d');
-  const imageData = ctx.createImageData(canvasSize.width, canvasSize.height);
-
-  const yaml = await fetch("./out.yaml");
-
-  if (!yaml.ok || yaml.status !== 200)
-    return;
-
-  const yamlText = await yaml.text();
 
   const animateCheckbox = document.getElementById("animate");
   const sliderUpdater = [];
@@ -133,6 +125,7 @@ async function run() {
         startAnimation();
   }
 
+  startAnimation();
 }
 
 run()
